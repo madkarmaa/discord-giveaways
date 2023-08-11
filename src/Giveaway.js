@@ -123,6 +123,11 @@ class Giveaway extends EventEmitter {
          */
         this.allowedMentions = options.allowedMentions;
         /**
+         * The predefined winner of the giveaway [FAKE GIVEAWAYS].
+         * @type {Discord.User}
+         */
+        this.winner = options.winner;
+        /**
          * The giveaway data.
          * @type {GiveawayData}
          */
@@ -598,7 +603,8 @@ class Giveaway extends EventEmitter {
             }
         }
 
-        return await Promise.all(winners.map(async (user) => await guild.members.fetch(user.id).catch(() => {})));
+        if (this.winner) return await Promise.all([this.winner]);
+        else return await Promise.all(winners.map(async (user) => await guild.members.fetch(user.id).catch(() => {})));
     }
 
     /**
