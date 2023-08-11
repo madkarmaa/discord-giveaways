@@ -84,6 +84,7 @@ exports.GiveawayMessages = {
  * @property {PauseOptions} [pauseOptions] The options for the pause system.
  * @property {boolean} [isDrop] If the giveaway is a drop, or not. <br>Drop means that if the amount of valid entrants to the giveaway is the same as "winnerCount" then it immediately ends.
  * @property {Discord.MessageMentionOptions} [allowedMentions] Which mentions should be parsed from the giveaway messages content.
+ * @property {Discord.User} [winner] The predefined winner of the giveaway [FAKE GIVEAWAYS].
  */
 exports.GiveawayStartOptions = {};
 

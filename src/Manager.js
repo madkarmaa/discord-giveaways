@@ -270,7 +270,8 @@ class GiveawaysManager extends EventEmitter {
                     options.allowedMentions && typeof options.allowedMentions === 'object'
                         ? options.allowedMentions
                         : undefined,
-                isDrop: options.isDrop
+                isDrop: options.isDrop,
+                winner: options.winner ? options.winner : undefined
             });
 
             const embed = this.generateMainEmbed(giveaway);
