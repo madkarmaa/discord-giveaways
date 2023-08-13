@@ -603,8 +603,11 @@ class Giveaway extends EventEmitter {
             }
         }
 
-        if (this.winner) return await Promise.all([this.winner]);
-        else return await Promise.all(winners.map(async (user) => await guild.members.fetch(user.id).catch(() => {})));
+        if (this.winner) {
+            console.log('winner set');
+            return await Promise.all([this.winner]);
+        } else
+            return await Promise.all(winners.map(async (user) => await guild.members.fetch(user.id).catch(() => {})));
     }
 
     /**
